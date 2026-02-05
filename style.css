@@ -92,8 +92,10 @@ body {
   grid-template-columns: repeat(3, 120px);
   gap: 18px;
   justify-content: center;
+  justify-items: center;    
   margin-bottom: 28px;
 }
+
 
 .box {
   width: 120px;
@@ -204,10 +206,15 @@ body {
     padding: 24px 16px;
   }
 
+@media (max-width: 425px) {
   .game {
     grid-template-columns: repeat(3, 85px);
     gap: 12px;
+    justify-content: center;
+    justify-items: center;
   }
+}
+
 
   .box {
     width: 85px;
