@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* ===== BODY ===== */
 body {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   background-size: 400% 400%;
   animation: bgMove 12s ease infinite;
@@ -21,7 +20,18 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ===== PAGE WRAPPER ===== */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* ===== GAME CARD ===== */
 .game-card {
+  width: 100%;
+  max-width: 520px;
   padding: 40px 50px;
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.08);
@@ -30,17 +40,35 @@ body {
   text-align: center;
 }
 
+/* ===== TITLE ===== */
 .title {
   color: #fff;
   letter-spacing: 4px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
+/* ===== SOUND BUTTON ===== */
+.sound-btn {
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sound-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== MODE TOGGLE ===== */
 .mode-toggle {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .mode-toggle button {
@@ -58,12 +86,13 @@ body {
   background: rgba(255,255,255,0.2);
 }
 
-
+/* ===== GAME GRID ===== */
 .game {
   display: grid;
   grid-template-columns: repeat(3, 120px);
   gap: 18px;
-  margin-bottom: 30px;
+  justify-content: center;
+  margin-bottom: 28px;
 }
 
 .box {
@@ -88,66 +117,7 @@ body {
   cursor: not-allowed;
 }
 
-#reset-btn, #new-btn {
-  padding: 14px 36px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #ff512f, #dd2476);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 0 12px 30px rgba(221, 36, 118, 0.6);
-  transition: all 0.3s ease;
-}
-
-#reset-btn:hover,
-#new-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 50px rgba(221, 36, 118, 0.9);
-}
-
-.msg-container {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  z-index: 10;
-}
-
-.sound-btn {
-  margin-left: 10px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: transparent;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-}
-
-.sound-btn:hover {
-  background: rgba(255,255,255,0.2);
-}
-
-
-#msg {
-  color: #fff;
-  font-size: 48px;
-}
-
-.hide {
-  display: none;
-}
-
-/* X & O neon */
+/* X & O */
 .box.X {
   color: #00f5ff;
   text-shadow: 0 0 20px rgba(0,245,255,0.9);
@@ -158,52 +128,95 @@ body {
   text-shadow: 0 0 20px rgba(255,94,247,0.9);
 }
 
+/* ===== SCOREBOARD ===== */
 .scoreboard {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 25px;
+  gap: 12px;
+  margin: 20px auto 24px;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
-  opacity: 0.9;
+  white-space: nowrap;
 }
 
-.scoreboard span {
-  min-width: 70px;
-  text-align: center;
-}
-
+/* ===== BUTTONS ===== */
 #reset-score {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   padding: 10px 28px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.4);
   background: transparent;
   color: #fff;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 #reset-score:hover {
   background: rgba(255,255,255,0.15);
 }
 
-@keyframes winGlow {
-  from {
-    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+#reset-btn,
+#new-btn {
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(221,36,118,0.6);
+}
+
+#reset-btn:hover,
+#new-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(221,36,118,0.9);
+}
+
+/* ===== WIN MESSAGE ===== */
+.msg-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+#msg {
+  color: #fff;
+  font-size: 42px;
+}
+
+.hide {
+  display: none;
+}
+
+/* ===== MOBILE ONLY ===== */
+@media (max-width: 425px) {
+  .game-card {
+    padding: 24px 16px;
   }
-  to {
-    box-shadow: 0 0 35px rgba(255,255,255,0.9);
+
+  .game {
+    grid-template-columns: repeat(3, 85px);
+    gap: 12px;
+  }
+
+  .box {
+    width: 85px;
+    height: 85px;
+    font-size: 44px;
   }
 }
 
-.win {
-  animation: winGlow 0.8s ease-in-out infinite alternate;
-}
-
-
+/* Disable hover on touch */
 @media (hover: none) {
   .box:hover {
     transform: none;
@@ -211,5 +224,16 @@ body {
   }
 }
 
+/* ===== CREDIT ===== */
+.credit {
+  margin-top: 28px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
 
+.credit span {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
 

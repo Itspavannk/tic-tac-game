@@ -4,51 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tic Tac</title>
+
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- WIN / DRAW MESSAGE -->
   <div class="msg-container hide">
     <p id="msg"></p>
     <button id="new-btn">New Game</button>
   </div>
 
-  <main class="game-card">
-    <h1 class="title">TIC TAC</h1>
-<button id="sound-toggle" class="sound-btn">🔇</button>
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+    <main class="game-card">
 
-    <div class="mode-toggle">
+      <h1 class="title">TIC TAC</h1>
+
+      <button id="sound-toggle" class="sound-btn">🔇</button>
+
+      <div class="mode-toggle">
         <button id="pvp-btn" class="active">Player vs Player</button>
         <button id="ai-btn">Player vs AI</button>
-   </div>
+      </div>
 
+      <div class="game">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </div>
 
-    <div class="game">
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-      <button class="box"></button>
-    </div>
-
-    <div class="scoreboard">
+      <!-- SCOREBOARD -->
+      <div class="scoreboard">
         <span id="score-o">O : 0</span>
         <span>|</span>
         <span id="score-x">X : 0</span>
         <span>|</span>
         <span id="score-draw">Draws : 0</span>
-    </div>
+      </div>
 
-  <button id="reset-score">Reset Scoreboard</button>
-  
-  <button id="reset-btn">Reset Game</button>
+      <button id="reset-score">Reset Scoreboard</button>
+      <button id="reset-btn">Reset Game</button>
 
-  </main>
+      <p class="credit">
+            Built with ❤️ by <span>Pavan Naik</span>
+      </p>
+
+
+    </main>
+  </div>
+
   <script src="ai.js"></script>
   <script src="app.js"></script>
 </body>
