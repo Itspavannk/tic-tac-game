@@ -16,6 +16,13 @@
 
   <main class="game-card">
     <h1 class="title">TIC TAC</h1>
+<button id="sound-toggle" class="sound-btn">🔇</button>
+
+    <div class="mode-toggle">
+        <button id="pvp-btn" class="active">Player vs Player</button>
+        <button id="ai-btn">Player vs AI</button>
+   </div>
+
 
     <div class="game">
       <button class="box"></button>
@@ -29,9 +36,20 @@
       <button class="box"></button>
     </div>
 
-    <button id="reset-btn">Reset Game</button>
-  </main>
+    <div class="scoreboard">
+        <span id="score-o">O : 0</span>
+        <span>|</span>
+        <span id="score-x">X : 0</span>
+        <span>|</span>
+        <span id="score-draw">Draws : 0</span>
+    </div>
 
+  <button id="reset-score">Reset Scoreboard</button>
+  
+  <button id="reset-btn">Reset Game</button>
+
+  </main>
+  <script src="ai.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

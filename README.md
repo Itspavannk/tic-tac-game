@@ -1,14 +1,18 @@
 # Tic Tac Toe 🎮
 
-A modern, next-generation Tic Tac Toe game built using  
-HTML, CSS, and JavaScript with a clean UI and smooth gameplay.
+A modern Tic Tac Toe game built using HTML, CSS, and JavaScript with a polished UI and multiple play modes.
+
+## Preview
+![Game](screenshots/game.png)
+![Win](screenshots/win.png)
 
 ## Features
-- Interactive two-player mode
-- Neon-style X & O
-- Glassmorphism UI
+- Player vs Player
+- Player vs AI
+- Persistent scoreboard (localStorage)
+- Mute / Unmute sound toggle
+- Win animations
 - Responsive design
-- Reset and New Game options
 
 ## Live Demo
 👉 https://itspavannk.github.io/tic-tac-game/
